@@ -1,7 +1,7 @@
 # Ataque STP Claim Root Bridge  
 ## Documentación Técnica Profesional
+ENLACE DEL VIDEO: https://www.youtube.com/watch?v=2by5Jxheums
 
----
 
 ## Aviso Legal
 
@@ -134,8 +134,8 @@ Esta herramienta debe utilizarse **únicamente** para:
 
 ## 9. Autor
 
-**Max (Reily Castillo Del Rosario)**  
-Estudiante de Ciberseguridad  
+Reily Castillo Del Rosario  
+Estudiante de Seguridad de informatica  
 República Dominicana  
 
 ---

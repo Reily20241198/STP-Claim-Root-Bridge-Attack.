@@ -1,1 +1,0 @@
-# STP-Claim-Root-Bridge-Attack.

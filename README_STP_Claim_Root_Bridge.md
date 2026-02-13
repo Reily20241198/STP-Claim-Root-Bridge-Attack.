@@ -88,17 +88,16 @@ sudo apt install python3-scapy -y
 
 Las evidencias del laboratorio deben almacenarse en el siguiente directorio:
 
-```
-/images
-```
-
-Ejemplos de evidencias recomendadas:
-- Topología antes del ataque
-- Cambio del Root Bridge
-- Capturas de tráfico BPDU
-- Ejecución del script
-
----
+Esta es mi topologia sencilla
+<img width="1312" height="654" alt="Screenshot_18" src="https://github.com/user-attachments/assets/5e62f543-7e7d-4f7d-9bd2-db8b2b6bbb93" />
+lo siguiente sera ver el estado del SW
+<img width="889" height="496" alt="Screenshot_16" src="https://github.com/user-attachments/assets/f8bbd9da-ef4c-420c-b447-4bbe4a7a4262" />
+Como pudimos ver el root lo tiene lo que es la E0/1 y queremos que la tenga la E0/3
+que ese es el del atacante 
+<img width="1034" height="857" alt="Screenshot_15" src="https://github.com/user-attachments/assets/29872e0a-0697-4e9f-800f-de41bd68f4e0" />
+ya aqui procedemos a realizar nuestro script corriendo y una vez que ya lo tengamos corriendo vamoos a ir para el sw a ver si es el del root
+<img width="730" height="292" alt="Screenshot_17" src="https://github.com/user-attachments/assets/4ca5fc45-4220-4a06-ab14-f332e12511f2" />
+Ejectivamente ya es el root 
 
 ## 7. Medidas de Mitigación
 

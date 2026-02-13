@@ -1,0 +1,159 @@
+# Ataque STP Claim Root Bridge  
+## Documentación Técnica Profesional
+
+---
+
+## Aviso Legal
+
+Este proyecto ha sido desarrollado **exclusivamente con fines educativos y de auditoría de seguridad autorizada**.  
+El uso de esta herramienta en redes, sistemas o infraestructuras **sin autorización expresa** es ilegal y puede acarrear consecuencias legales.
+
+El autor no se hace responsable del uso indebido de la información o del código presentado.
+
+---
+
+## 1. Descripción General
+
+El **STP Claim Root Bridge Attack** es un ataque de capa 2 que explota el funcionamiento del **Spanning Tree Protocol (STP)**.  
+El atacante envía **BPDUs falsificados** anunciándose como el **Root Bridge** de la red, utilizando una prioridad STP más baja que la de los switches legítimos.
+
+Como resultado, la topología de la red se reorganiza y el atacante puede posicionarse en el centro del tráfico de red.
+
+Este ataque puede permitir:
+- Man-in-the-Middle (MitM)
+- Intercepción de tráfico
+- Degradación del rendimiento de la red
+- Denegación de servicio (DoS)
+
+---
+
+## 2. Objetivo del Script
+
+El objetivo del script es **demostrar de forma práctica cómo un atacante puede reclamar el rol de Root Bridge** en una red con STP mal configurado.
+
+Este laboratorio permite:
+- Comprender el funcionamiento interno de STP
+- Analizar el impacto de BPDUs maliciosas
+- Evaluar riesgos en redes sin protecciones de capa 2
+- Aplicar medidas de mitigación adecuadas
+
+Este proyecto está destinado únicamente a **laboratorios académicos y pruebas de seguridad autorizadas**.
+
+---
+
+## 3. Topología de Red
+
+La práctica se realiza sobre una red LAN con switches interconectados mediante STP.
+
+| Dispositivo | Descripción |
+|------------|-------------|
+| Switch legítimo | Root Bridge original |
+| Switch secundario | Switch de acceso |
+| Atacante | Kali Linux enviando BPDUs falsas |
+| Hosts | Dispositivos finales conectados |
+
+**Protocolo utilizado:** Spanning Tree Protocol (STP)
+
+---
+
+## 4. Parámetros Utilizados
+
+- Interfaz de red: `eth0`
+- Prioridad STP falsa: `0`
+- Intervalo de envío de BPDUs
+- Modo de ataque: continuo
+
+---
+
+## 5. Requisitos para Utilizar la Herramienta
+
+### Requisitos de Software
+- Sistema operativo Linux (Kali Linux recomendado)
+- Python 3.x
+- Librería Scapy
+
+### Requisitos del Sistema
+- Permisos de superusuario (root o sudo)
+- Acceso a una red con STP habilitado
+
+### Instalación de dependencias
+```bash
+sudo apt update
+sudo apt install python3-scapy -y
+```
+
+---
+
+## 6. Evidencias y Capturas de Pantalla
+
+Las evidencias del laboratorio deben almacenarse en el siguiente directorio:
+
+```
+/images
+```
+
+Ejemplos de evidencias recomendadas:
+- Topología antes del ataque
+- Cambio del Root Bridge
+- Capturas de tráfico BPDU
+- Ejecución del script
+
+---
+
+## 7. Medidas de Mitigación
+
+Para prevenir ataques de **STP Claim Root Bridge**, se recomiendan las siguientes medidas:
+
+- Habilitar **BPDU Guard** en puertos de acceso
+- Utilizar **Root Guard** en puertos críticos
+- Definir manualmente el Root Bridge
+- Segmentar la red correctamente
+- Monitorear eventos STP
+
+### Ejemplo de configuración en Cisco IOS
+```bash
+spanning-tree portfast bpduguard default
+spanning-tree guard root
+```
+
+---
+
+## 8. Uso Ético
+
+Esta herramienta debe utilizarse **únicamente** para:
+- Prácticas académicas
+- Laboratorios de ciberseguridad
+- Auditorías de seguridad con autorización
+
+🚫 Está estrictamente prohibido su uso en:
+- Redes productivas
+- Redes públicas
+- Sistemas sin consentimiento del propietario
+
+---
+
+## 9. Autor
+
+**Max (Reily Castillo Del Rosario)**  
+Estudiante de Ciberseguridad  
+República Dominicana  
+
+---
+
+## 10. Contribuciones
+
+Las contribuciones son bienvenidas siempre que:
+- Mantengan un enfoque educativo
+- No promuevan actividades ilegales
+- Incluyan documentación clara y profesional
+
+Proceso de contribución:
+1. Realizar un fork del repositorio
+2. Crear una nueva rama
+3. Enviar un Pull Request debidamente documentado
+
+---
+
+## 11. Licencia
+
+Este proyecto se distribuye bajo la licencia **MIT**, permitiendo su uso, modificación y distribución con fines educativos, siempre que se mantenga la atribución correspondiente al autor.
